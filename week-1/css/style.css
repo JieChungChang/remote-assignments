@@ -1,0 +1,56 @@
+/* Base Styles -------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+header {
+	background-color: #00ffbf;
+	background-size: cover;
+}
+
+img {
+  height: 1em;
+}
+
+.navigation-list {
+	list-style: none;
+}
+
+/* Pseudo-classes ------------------ */
+
+a:link {
+  /*color: rgb(255, 169, 73);*/
+  text-decoration: none;
+}
+
+
+/* Floated Columns ------------------ */
+
+.navigation-list {
+	float: right;
+	display: inline-block;
+}
+
+.navigation-list li {
+	float: right;
+	padding-right: 10px;
+}
+
+#home-page-icon {
+	display: inline-block;
+	float: left;
+	margin: 15px;
+}
+
+/* Float Clearfix ------------------ */
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
