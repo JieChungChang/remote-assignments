@@ -5,7 +5,7 @@
 }
 
 body {
-	margin-top: 5em;
+	margin-top: 279px;
 	font-family: 'Varela Round', sans-serif;
 	line-height: 1.6;
 	color: #3a3a3a;
@@ -14,7 +14,6 @@ body {
 .main-header {
 	position: fixed;
 	top: 0;
-	height: 5em;
 	width: 100%;
 }
 
@@ -132,6 +131,9 @@ a:link {
 
 
 @media (min-width: 800px) {
+		body {
+			margin-top: 92px;
+		}
 
 	    .name {
 	      float: left;
