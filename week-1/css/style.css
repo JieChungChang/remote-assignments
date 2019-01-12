@@ -5,10 +5,10 @@
 }
 
 body {
-	margin-top: 279px;
+	margin-top: 71px;
 	font-family: 'Varela Round', sans-serif;
 	line-height: 1.6;
-	color: #3a3a3a;
+	color: #093a58;
 }
 
 .main-header {
@@ -17,10 +17,25 @@ body {
 	width: 100%;
 }
 
+.name {
+	float: left;
+	margin: 0;
+	font-size: 1.25em;
+}
+
+.home-page-icons {
+  	height: 1.25em;
+}
+
 .head-icon {
 	margin-top: 1em;
 	width: 190px;
 	border-radius: 50%;
+}
+
+.menu-icon {
+	/*display: inline-block;*/
+	float: right;
 }
 
 .banner {
@@ -29,6 +44,11 @@ body {
 	text-align: center;
 }
 
+.about-me-heading {
+	text-align: center;
+	padding-top: 75px;
+	padding-bottom: 1em;
+}
 
 .main-footer {
 	background: #d9e4ea;
@@ -43,16 +63,8 @@ body {
 
 /* ---- Navigation ---- */
 
-.name {
-	margin: 0;
-	font-size: 1.25em;
-}
-
-.home-page-icons {
-  	height: 1.25em;
-}
-
 .navigation-list {
+	display: none;
 	list-style: none;
 }
 
@@ -92,7 +104,6 @@ body {
 /* Pseudo-classes ------------------ */
 
 a:link {
-  /*color: rgb(255, 169, 73);*/
   text-decoration: none;
 }
 
@@ -135,12 +146,13 @@ a:link {
 			margin-top: 92px;
 		}
 
-	    .name {
-	      float: left;
-	  	}
+		.menu-icon {
+			display: none;
+		}
 	    
 	    .navigation-list  {
-	      float: right;
+	    	display: block;
+	      	float: right;
 	  	}
 
 	  	.navigation-list  li{
