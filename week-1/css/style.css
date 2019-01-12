@@ -5,20 +5,89 @@
 }
 
 body {
+	margin-top: 5em;
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+}
+
+.main-header {
+	position: fixed;
+	top: 0;
+	height: 5em;
+	width: 100%;
+}
+
+.head-icon {
+	margin-top: 1em;
+	width: 190px;
+	border-radius: 50%;
+}
+
+.banner {
+	margin-top: 0;
+	background-color: #d9e4ea;
+	text-align: center;
+}
+
+
+.main-footer {
+	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+.banner,
+.main-footer {
+  text-align: center;
+}
+
+/* ---- Navigation ---- */
+
+.name {
 	margin: 0;
+	font-size: 1.25em;
 }
 
-header {
-	background-color: #00ffbf;
-	background-size: cover;
-}
-
-img {
-  height: 1em;
+.home-page-icons {
+  	height: 1.25em;
 }
 
 .navigation-list {
 	list-style: none;
+}
+
+.name a,
+.navigation-list a {
+  	display: block;
+	text-align: center;
+  	padding: 10px 10px;
+}
+
+.navigation-list a {
+	font-size: .95em;
+	color: #3acec2;
+	color: white;
+	text-transform: uppercase;
+}
+
+.navigation-list a:hover {
+	color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.container {
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	background: #3acec2;
+	margin-bottom: 0;
 }
 
 /* Pseudo-classes ------------------ */
@@ -29,28 +98,58 @@ a:link {
 }
 
 
-/* Floated Columns ------------------ */
-
-.navigation-list {
-	float: right;
-	display: inline-block;
-}
-
-.navigation-list li {
-	float: right;
-	padding-right: 10px;
-}
-
-#home-page-icon {
-	display: inline-block;
-	float: left;
-	margin: 15px;
-}
-
 /* Float Clearfix ------------------ */
 
-.group:after {
+
+.clearfix::after {
   content: "";
   display: table;
   clear: both;
 }
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 500px) {
+
+	.container {
+      width: 90%;
+      margin: 0 auto;
+  	}
+
+	.col { 
+		display: inline-block;
+		width: 50%; 
+		padding-right: 1em;
+		padding-left: 1em;
+		margin: -4px;
+		vertical-align: top;
+	}
+
+}
+
+
+@media (min-width: 800px) {
+
+	    .name {
+	      float: left;
+	  	}
+	    
+	    .navigation-list  {
+	      float: right;
+	  	}
+
+	  	.navigation-list  li{
+		    display: inline-block;
+		    margin-left: 15px;
+	  	}
+	}
+
+@media (min-width: 1200px) {
+		.container {
+			width: 80%;
+			max-width: 1200px
+		}
+	}
