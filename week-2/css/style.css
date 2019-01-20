@@ -1,0 +1,230 @@
+/* Base Styles -------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	margin-top: 71px;
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+	color: #093a58;
+}
+
+.main-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.name {
+	float: left;
+	margin: 0;
+	font-size: 1.25em;
+}
+
+.home-page-icons {
+  	height: 1.25em;
+}
+
+.head-icon {
+	margin-top: 1em;
+	width: 190px;
+	border-radius: 50%;
+}
+
+.menu-icon {
+	/*display: inline-block;*/
+	float: right;
+}
+
+.close-icon {
+	float: right;
+	margin: 0.5em 0.5em;
+}
+
+.banner {
+	margin-top: 0;
+	background-color: #d9e4ea;
+	text-align: center;
+}
+
+.about-me-heading {
+	text-align: center;
+	padding-top: 75px;
+	padding-bottom: 1em;
+}
+
+.main-footer {
+	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+.banner,
+.main-footer {
+  	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.button-flex-box {
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+button#toSeeMoreButton {
+  color: white;
+  font-size: .85em;
+  
+  background: #52bab3;
+  border: solid 1px;
+  border-color: rgba(0, 0, 0, .1);
+  border-radius: .3em;
+  cursor: pointer;
+
+  padding: .65em 1em;
+  outline: 0;
+}
+
+/* ---- Navigation ---- */
+
+.navigation-list {
+	display: none;
+	list-style: none;
+}
+
+.name a,
+.navigation-list a {
+  	display: block;
+	text-align: center;
+  	padding: 10px 10px;
+}
+
+.navigation-list a {
+	font-size: .95em;
+	color: white;
+	text-transform: uppercase;
+}
+
+.navigation-list a:hover {
+	color: #093a58;
+}
+
+/*navigation bar detail 的 page layout*/
+#navBarDetail {
+	background: #3acec2;
+	width: 50%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	top:0;
+	right:0;
+}
+
+/*navigation bar list detail 的基本 style*/
+.navigation-list-detail {
+	list-style: none;
+	float: left;
+}
+
+.navigation-list-detail a {
+	list-style: none;
+	color: white;
+	font-size: 1.25em;
+	text-transform: uppercase;
+}
+
+.navigation-list-detail a:hover {
+	color: #093a58;
+}
+
+
+/* ---- Layout Containers ---- */
+
+.container {
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	background: #3acec2;
+	margin-bottom: 0;
+}
+
+/* Pseudo-classes ------------------ */
+
+a:link {
+  text-decoration: none;
+}
+
+
+/* Float Clearfix ------------------ */
+
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 500px) {
+
+	.container {
+      width: 90%;
+      margin: 0 auto;
+  	}
+
+	.col { 
+		display: inline-block;
+		width: 50%; 
+		padding-right: 1em;
+		padding-left: 1em;
+		margin: -4px;
+		vertical-align: top;
+	}
+
+}
+
+
+@media (min-width: 800px) {
+		body {
+			margin-top: 92px;
+		}
+
+		.menu-icon {
+			display: none;
+		}
+	    
+	    .navigation-list  {
+	    	display: block;
+	      	float: right;
+	  	}
+
+	  	.navigation-list  li{
+		    display: inline-block;
+		    margin-left: 15px;
+	  	}
+
+	  	#navBarDetail {
+			display: none;
+		}
+	}
+
+@media (min-width: 1200px) {
+		.container {
+			width: 80%;
+			max-width: 1200px
+		}
+	}
