@@ -1,0 +1,7 @@
+extends layout.pug
+block content
+	section#content
+		if errMessage
+			h2= errMessage
+		else 
+			h2 The result is #{count} 

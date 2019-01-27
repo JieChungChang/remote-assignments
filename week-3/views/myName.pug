@@ -1,0 +1,9 @@
+extends layout.pug
+block content
+	if name
+		h2 Hello! #{name}!
+	else
+		form(action='/trackName', method='post')
+			label What's your name:
+				input(type='text', name='username')
+			button(type='submit') Enter
