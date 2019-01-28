@@ -3,35 +3,33 @@
 <head>
 	<title></title>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script>
-		$(document).ready(function() {
-
-			$('form').submit(function(evt) {
-				evt.preventDefault();
-				var url      = $(this).attr('action');
-				var formData = $(this).serialize();
-				$.ajax(url, {
-					data: formData,
-					type: "GET",
-					success: function(response) {
-						let resObject   = $(response);
-						let result = resObject[2].textContent;
-						$('#result').html('<h2>' + result + '</h2>');
-					}
-				});
-			});
-		});
-	</script>
 </head>
 <body>
-	<form method="get" action="/getData">
-		<label for="number">Please enter the number you want to sum from one: </label>
-		<input type="text" name="number">
-		<button type='submit'>Send</button>
-		<br>
-	</form>
+	<label for="number">Please enter the number you want to sum from one: </label>
+	<input type="text" name="number">
+	<button type="submit" onclick="JavaScript:sendForm()" >Send</button>
+	<br>
 	<div id='result'>
 	</div>
+	<script>
+		function sendForm () {
+			var xhr    = new XMLHttpRequest();
+			var number = document.getElementsByTagName('input')[0].value;
+			var params = '?number=' + number;
 
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					var parser = new DOMParser();
+					var responseDOM = parser.parseFromString(xhr.responseText, "text/html");
+					var result = '<h2>';
+					result += responseDOM.getElementsByTagName('h2')[0].textContent;
+					result += '</h2>';
+					document.getElementById('result').innerHTML = result;
+				}
+			};
+			xhr.open('GET', '/getData' + params);
+			xhr.send();
+		}
+	</script>
 </body>
 </html>
