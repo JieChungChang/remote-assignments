@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+	head
+		title JC's assignment4 Page
+	body
+		if message
+			p
+				h2 #{message}
+		h2 sign up 
+		form(action='/signUp', method='post')
+			label E-Mail:
+				input(type='text', name='email')
+			label Password:
+				input(type='text', name='password')
+			button(type='submit') sign up
+
+		h2 sign in
+		form(action='/signIn', method='post')
+			label E-Mail:
+				input(type='text', name='email')
+			label Password:
+				input(type='text', name='password')
+			button(type='submit') sign in
