@@ -37,20 +37,16 @@ app.get('/member', (req, res)=> {
 });
 
 app.post('/signUp', (req, res) => {
-	let sql = 'SELECT email FROM user';
+	signInMail = req.body.email;
+	let password = req.body.password;
+	let sql = "SELECT * FROM user WHERE email='" + signInMail +"'";
 	db.query(sql, (err, result) => {
 		if(err) throw err;
 		
-		let mailList   = result;
-		signInMail = req.body.email;
-		let password = req.body.password;
-
-		for (i=0; i<result.length; i++){
-			if (signInMail === mailList[i].email) {
-				signInMail = '';
-				errMessage = 'This email already sign up by someone! Please try another one!';
-				return res.redirect('/');
-			}
+		if (result[0]) {
+			signInMail = '';
+			errMessage = 'This email already sign up by someone! Please try another one!';
+			return res.redirect('/');
 		}
 
 		errMessage = '';
@@ -68,23 +64,23 @@ app.post('/signUp', (req, res) => {
 
 
 app.post('/signIn', (req, res) => {
-	let sql = 'SELECT * FROM user';
+	signInMail = req.body.email;
+	let password = req.body.password;
+	let sql = "SELECT * FROM user WHERE email='" + signInMail +"'";
+
 	db.query(sql, (err, result) => {
 		if(err) throw err;
 		
-		let queryList   = result;
-		signInMail = req.body.email;
-		let password = req.body.password;
+		console.log(result);
 
-		for (i=0; i<result.length; i++){
-			if (signInMail === queryList[i].email) {
-				if (password === queryList[i].password) {
-					return res.redirect('/member');	
-				} else {
-					errMessage = 'Wrong password';
-					return res.redirect('/');	
-				}
-			} 
+		if (result[0]){
+			console.log("check");
+			if (password === result[0].password) {
+				return res.redirect('/member');	
+			} else {
+				errMessage = 'Wrong password';
+				return res.redirect('/');	
+			}
 		}
 		errMessage = "Can't find this account";
 		return res.redirect('/');
